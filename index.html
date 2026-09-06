@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18231d">
+  <meta name="description" content="North & Loom creates refined everyday clothing and accessories built for movement, travel, and repeat wear.">
+  <title>North & Loom — Built for Everyday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to products</a>
+  <div class="demo-bar">Portfolio demonstration · Fictional products · No real orders or payments</div>
+  <div class="shipping-bar"><span>Complimentary shipping over $150</span><span>Easy 30-day returns</span><span>Secure demo checkout</span></div>
+  <header class="site-header">
+    <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    <a class="logo" href="#top" aria-label="North and Loom home">NORTH<span>&amp;</span>LOOM</a>
+    <nav aria-label="Main navigation"><a href="#shop">New Arrivals</a><a href="#shop" data-nav-filter="Apparel">Apparel</a><a href="#shop" data-nav-filter="Accessories">Accessories</a><a href="#story">Our Standard</a></nav>
+    <div class="header-actions">
+      <button class="icon-button search-toggle" type="button" aria-label="Search">⌕</button>
+      <button class="cart-button" type="button" aria-label="Open cart">Bag <span id="cart-count">0</span></button>
+    </div>
+  </header>
+  <div class="search-panel" hidden><label><span>Search the collection</span><input id="header-search" type="search" placeholder="Try “overshirt” or “bag”"></label><button type="button" class="search-close" aria-label="Close search">×</button></div>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <img src="assets/hero.png" alt="Model wearing a forest green overshirt in a modern architectural setting">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Fall / Winter 2026</p>
+        <h1>Less noise.<br><em>Better clothes.</em></h1>
+        <p>Purposeful layers, grounded colors, and honest materials designed to earn their place in your everyday rotation.</p>
+        <a class="button primary" href="#shop">Shop the collection <span>↘</span></a>
+      </div>
+      <div class="hero-product"><span>01 / The Field Overshirt</span><strong>$148</strong></div>
+    </section>
+
+    <section class="marquee" aria-label="Brand values"><span>Considered materials</span><i></i><span>Made for repeat wear</span><i></i><span>Small-batch production</span><i></i><span>Designed without excess</span></section>
+
+    <section class="shop-section" id="shop">
+      <div class="shop-heading">
+        <div><p class="eyebrow dark">The current edit</p><h2>Everyday, refined.</h2></div>
+        <p>Six dependable pieces. Easy to combine, built to wear often, and detailed enough to stand on their own.</p>
+      </div>
+      <div class="shop-tools">
+        <div class="filter-buttons" role="group" aria-label="Filter products"><button class="active" type="button" data-filter="All">All</button><button type="button" data-filter="Apparel">Apparel</button><button type="button" data-filter="Footwear">Footwear</button><button type="button" data-filter="Accessories">Accessories</button></div>
+        <div class="product-search"><span>⌕</span><input id="product-search" type="search" placeholder="Search products" aria-label="Search products"></div>
+        <label class="sort-label"><span>Sort</span><select id="sort-select"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name</option></select></label>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="no-results" id="no-results" hidden>No products match your search.</p>
+    </section>
+
+    <section class="story" id="story">
+      <div class="story-number">N/L<br>06</div>
+      <div class="story-copy"><p class="eyebrow light">Our standard</p><h2>Own fewer.<br>Wear them longer.</h2><p>North &amp; Loom is a fictional direct-to-consumer label built around a simple premise: useful design deserves better materials and fewer shortcuts.</p></div>
+      <div class="story-points"><article><span>01</span><div><h3>Materials first</h3><p>Fabric is selected for hand feel, structure, and how it improves with regular wear.</p></div></article><article><span>02</span><div><h3>Quietly functional</h3><p>Useful pockets, comfortable movement, and details that do not compete for attention.</p></div></article><article><span>03</span><div><h3>Built for rotation</h3><p>A focused palette makes every piece easier to combine with what you already own.</p></div></article></div>
+    </section>
+
+    <section class="newsletter">
+      <p class="eyebrow dark">From the studio</p><h2>New releases. No clutter.</h2><p>Occasional product notes, restocks, and early access.</p>
+      <form id="newsletter-form"><label><span class="sr-only">Email address</span><input type="email" required placeholder="Email address"><button type="submit">Join the list →</button></label><small id="newsletter-note">By joining, you agree to receive demonstration marketing emails.</small></form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="logo footer-logo" href="#top">NORTH<span>&amp;</span>LOOM</a>
+    <div><strong>Shop</strong><a href="#shop">New Arrivals</a><a href="#shop">Apparel</a><a href="#shop">Accessories</a></div>
+    <div><strong>Help</strong><a href="#">Shipping &amp; Returns</a><a href="#">Size Guide</a><a href="#">Contact</a></div>
+    <div><strong>Demo</strong><span>This is a fictional portfolio website. Products, policies, contact details, and transactions are for demonstration only.</span></div>
+    <small>© 2026 North &amp; Loom · Demonstration storefront</small>
+  </footer>
+
+  <aside class="drawer cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="drawer-header"><div><p>Your bag</p><h2 id="cart-title"><span id="cart-title-count">0</span> items</h2></div><button class="drawer-close" type="button" aria-label="Close cart">×</button></div>
+    <div class="cart-empty" id="cart-empty"><span>0</span><h3>Your bag is empty.</h3><p>Add something built to stay in rotation.</p><button type="button" class="button dark drawer-close">Shop the collection</button></div>
+    <div class="cart-filled" id="cart-filled" hidden><div class="cart-items" id="cart-items"></div><div class="promo"><label><input id="promo-input" type="text" placeholder="Promo code"><button id="promo-button" type="button">Apply</button></label><small id="promo-message">Try WELCOME15 for this demonstration.</small></div><div class="cart-totals"><div><span>Subtotal</span><strong id="cart-subtotal">$0</strong></div><div id="discount-line" hidden><span>Discount</span><strong id="cart-discount">−$0</strong></div><div><span>Estimated shipping</span><strong id="cart-shipping">Calculated at checkout</strong></div><div class="cart-total"><span>Estimated total</span><strong id="cart-total">$0</strong></div></div><button class="button checkout-open" type="button">Continue to checkout <span>→</span></button><p class="secure-line">Secure demonstration checkout · No charge will be made</p></div>
+  </aside>
+  <div class="page-shade" id="page-shade" hidden></div>
+
+  <div class="modal" id="product-modal" hidden>
+    <div class="modal-backdrop" data-product-close></div>
+    <section class="product-modal-card" role="dialog" aria-modal="true" aria-labelledby="product-modal-name">
+      <button class="modal-close" type="button" data-product-close aria-label="Close">×</button>
+      <div class="modal-product-image" id="modal-product-image"></div>
+      <div class="modal-product-info"><p class="product-category" id="modal-product-category"></p><h2 id="product-modal-name"></h2><strong class="modal-price" id="modal-product-price"></strong><p id="modal-product-description"></p><div class="option-group"><span>Color: <strong id="selected-color-label"></strong></span><div class="color-options" id="color-options"></div></div><div class="option-group" id="size-group"><span>Size</span><div class="size-options" id="size-options"></div></div><p class="stock-note" id="stock-note"></p><button class="button modal-add" id="modal-add" type="button">Add to bag <span>+</span></button><div class="detail-notes"><span>Free shipping over $150</span><span>30-day returns</span><span>Secure demo checkout</span></div></div>
+    </section>
+  </div>
+
+  <div class="checkout" id="checkout-modal" hidden>
+    <div class="checkout-header"><a class="logo">NORTH<span>&amp;</span>LOOM</a><button type="button" class="checkout-close">Return to bag ×</button></div>
+    <div class="checkout-layout">
+      <section class="checkout-main">
+        <div class="checkout-steps"><span class="active">1 Delivery</span><i></i><span>2 Payment</span><i></i><span>3 Confirmation</span></div>
+        <form id="checkout-form">
+          <section class="checkout-step active" data-checkout-step="1"><p class="checkout-kicker">Step 1 of 3</p><h1>Where should we send it?</h1><div class="delivery-toggle"><label><input type="radio" name="delivery" value="ship" checked><span><strong>Ship my order</strong><small>Free over $150 · otherwise $8</small></span></label><label><input type="radio" name="delivery" value="pickup"><span><strong>Local pickup</strong><small>Ready in 2–4 business days</small></span></label></div><div class="checkout-fields"><label class="full"><span>Email</span><input type="email" name="email" required autocomplete="email" placeholder="jordan@example.com"></label><label><span>First name</span><input type="text" name="first" required autocomplete="given-name"></label><label><span>Last name</span><input type="text" name="last" required autocomplete="family-name"></label><label class="full ship-field"><span>Street address</span><input type="text" name="address" required autocomplete="street-address"></label><label class="ship-field"><span>City</span><input type="text" name="city" required autocomplete="address-level2"></label><label class="ship-field"><span>State</span><select name="state" required autocomplete="address-level1"><option value="">Select</option><option>FL</option><option>GA</option><option>NY</option><option>TX</option><option>CA</option></select></label><label class="ship-field"><span>ZIP code</span><input type="text" name="zip" required inputmode="numeric" autocomplete="postal-code"></label><label><span>Mobile number</span><input type="tel" name="phone" required autocomplete="tel"></label></div><button class="button next-checkout" type="button">Continue to payment <span>→</span></button></section>
+          <section class="checkout-step" data-checkout-step="2"><p class="checkout-kicker">Step 2 of 3</p><h1>Payment details</h1><div class="demo-payment-note"><strong>Demonstration checkout</strong><span>Enter any test information. Nothing is transmitted, stored, or charged.</span></div><div class="checkout-fields"><label class="full"><span>Cardholder name</span><input type="text" name="cardname" required autocomplete="cc-name" placeholder="Jordan Smith"></label><label class="full"><span>Card number</span><input type="text" name="card" required inputmode="numeric" maxlength="19" autocomplete="cc-number" placeholder="4242 4242 4242 4242"></label><label><span>Expiration</span><input type="text" name="expiry" required inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY"></label><label><span>Security code</span><input type="text" name="cvc" required inputmode="numeric" maxlength="4" autocomplete="cc-csc" placeholder="123"></label></div><div class="checkout-buttons"><button class="back-checkout" type="button">← Back</button><button class="button" type="submit">Place demonstration order <span>→</span></button></div></section>
+        </form>
+        <section class="checkout-success" id="checkout-success" hidden><div class="success-check">✓</div><p class="checkout-kicker">Order confirmed</p><h1>Thank you, <span id="customer-name">Jordan</span>.</h1><p>A receipt and tracking link would now be sent to <strong id="customer-email"></strong>.</p><div class="order-number"><span>Order number</span><strong>NL-260906</strong></div><div class="tracking-demo"><span>Order placed</span><i></i><span>Preparing</span><i></i><span>Shipped</span><i></i><span>Delivered</span></div><button class="button checkout-finish" type="button">Return to store</button></section>
+      </section>
+      <aside class="checkout-summary"><h2>Order summary</h2><div id="checkout-items"></div><div class="summary-lines"><div><span>Subtotal</span><strong id="checkout-subtotal"></strong></div><div id="checkout-discount-row" hidden><span>Discount</span><strong id="checkout-discount"></strong></div><div><span>Shipping</span><strong id="checkout-shipping"></strong></div><div class="summary-total"><span>Total</span><strong id="checkout-total"></strong></div></div><small>Taxes calculated for demonstration purposes only.</small></aside>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
