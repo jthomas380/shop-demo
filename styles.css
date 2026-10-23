@@ -1,3 +1,7 @@
+/* Honor hidden even when component rules specify flex or grid. */
+[hidden] { display: none !important; }
+
+/* Compressed product artwork avoids downloading the original large PNGs. */
 .product-image,
 .cart-thumb,
 .summary-thumb,
@@ -7,27 +11,28 @@
   background-repeat: no-repeat;
 }
 .p1 {
-  background-image: url("assets/The Field Overshirt.png");
+  background-image: url("assets/The Field Overshirt.webp");
 }
 .p2 {
-  background-image: url("assets/The Weight Knit.png");
+  background-image: url("assets/The Weight Knit.webp");
 }
 .p3 {
-  background-image: url("assets/The Transit Trouser.png");
+  background-image: url("assets/The Transit Trouser.webp");
 }
 .p4 {
-  background-image: url("assets/The Weekender.png");
+  background-image: url("assets/The Weekender.webp");
 }
 .p5 {
-  background-image: url("assets/The Court Low.png");
+  background-image: url("assets/The Court Low.webp");
 }
 .p6 {
-  background-image: url("assets/The Signal Beanie.png");
+  background-image: url("assets/The Signal Beanie.webp");
 }
 :root {
   --ink: #151713;
   --forest: #18231d;
-  --orange: #c65d2e;
+  /* Slightly deeper orange gives white button text AA contrast. */
+  --orange: #b85328;
   --bone: #f1efe9;
   --paper: #fff;
   --muted: #6d706b;
@@ -202,7 +207,8 @@ a {
 }
 .search-panel label span {
   display: block;
-  color: #777b76;
+  /* Darken small text just enough for AA contrast on white. */
+  color: #70746f;
   font-size: 0.62rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -260,7 +266,8 @@ a {
   text-transform: uppercase;
 }
 .eyebrow.dark {
-  color: #737770;
+  /* Keep small labels readable on white and bone surfaces. */
+  color: #686c65;
 }
 .eyebrow.light {
   color: #b8c2ba;
@@ -376,7 +383,8 @@ a {
   padding: 0.5rem 0.8rem;
   border: 0;
   background: transparent;
-  color: #747873;
+  /* Darken small text just enough for AA contrast on white. */
+  color: #70746f;
   cursor: pointer;
   font-size: 0.72rem;
   font-weight: 600;
@@ -402,7 +410,8 @@ a {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #777b76;
+  /* Darken small text just enough for AA contrast on white. */
+  color: #70746f;
   font-size: 0.7rem;
 }
 .sort-label select {
@@ -424,7 +433,8 @@ a {
   aspect-ratio: 1/1;
   position: relative;
   overflow: hidden;
-  background-image: url("assets/products.png");
+  /* Product-specific artwork is set by the script; no missing sprite request. */
+  background-image: none;
   background-size: 300% 200%;
   background-repeat: no-repeat;
   background-color: #e9e7e2;
@@ -498,7 +508,8 @@ a {
 }
 .product-card-info > p {
   margin: 0.25rem 0;
-  color: #777b76;
+  /* Darken small text just enough for AA contrast on white. */
+  color: #70746f;
   font-size: 0.7rem;
 }
 .swatches {
@@ -568,7 +579,8 @@ a {
   color: var(--forest);
 }
 .newsletter > p:not(.eyebrow) {
-  color: var(--muted);
+  /* Darker muted text remains readable against the bone background. */
+  color: #686c65;
 }
 .newsletter form {
   width: min(530px, 100%);
@@ -599,7 +611,8 @@ a {
 .newsletter small {
   display: block;
   margin-top: 0.5rem;
-  color: #8b8e89;
+  /* Keep small labels readable on white and bone surfaces. */
+  color: #686c65;
   font-size: 0.62rem;
 }
 .site-footer {
@@ -628,7 +641,8 @@ a {
   grid-column: 1/-1;
   padding-top: 1.2rem;
   border-top: 1px solid #354039;
-  color: #6f7972;
+  /* Lighter copyright text meets AA contrast on the dark footer. */
+  color: #7c877f;
 }
 .page-shade {
   position: fixed;
@@ -662,7 +676,8 @@ a {
 }
 .drawer-header p {
   margin: 0;
-  color: #7a7e79;
+  /* Keep small labels readable on white and bone surfaces. */
+  color: #686c65;
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -717,7 +732,8 @@ a {
 }
 .cart-thumb,
 .summary-thumb {
-  background-image: url("assets/products.png");
+  /* Product-specific artwork is set by the script; no missing sprite request. */
+  background-image: none;
   background-size: 300% 200%;
   background-repeat: no-repeat;
   background-color: var(--bone);
@@ -735,7 +751,8 @@ a {
   font: 700 0.84rem var(--display);
 }
 .cart-line-info > span {
-  color: #777b76;
+  /* Darken small text just enough for AA contrast on white. */
+  color: #70746f;
   font-size: 0.68rem;
 }
 .line-price {
@@ -768,7 +785,8 @@ a {
 .remove-item {
   border: 0;
   background: transparent;
-  color: #777b76;
+  /* Darken small text just enough for AA contrast on white. */
+  color: #70746f;
   cursor: pointer;
   font-size: 0.67rem;
   text-decoration: underline;
@@ -798,7 +816,8 @@ a {
   font-weight: 700;
 }
 .promo small {
-  color: #80847f;
+  /* Keep checkout and bag detail text readable against its background. */
+  color: #686c65;
   font-size: 0.62rem;
 }
 .cart-totals {
@@ -824,7 +843,8 @@ a {
 }
 .secure-line {
   text-align: center;
-  color: #898d88;
+  /* Keep checkout and bag detail text readable against its background. */
+  color: #686c65;
   font-size: 0.62rem;
 }
 .modal[hidden],
@@ -863,7 +883,8 @@ a {
 }
 .modal-product-image {
   min-height: 590px;
-  background-image: url("assets/products.png");
+  /* Product-specific artwork is set by the script; no missing sprite request. */
+  background-image: none;
   background-size: 300% 200%;
   background-repeat: no-repeat;
   background-color: var(--bone);
@@ -873,7 +894,8 @@ a {
 }
 .product-category {
   margin: 0;
-  color: #7b7f7a;
+  /* Darken small text just enough for AA contrast on white. */
+  color: #70746f;
   font-size: 0.65rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -986,7 +1008,8 @@ a {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  color: #999d98;
+  /* Keep checkout and bag detail text readable against its background. */
+  color: #686c65;
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1045,7 +1068,8 @@ a {
   background: #fdf7f4;
 }
 .delivery-toggle small {
-  color: #7b7f7b;
+  /* Keep checkout and bag detail text readable against its background. */
+  color: #686c65;
   font-size: 0.65rem;
 }
 .checkout-fields {
@@ -1092,7 +1116,8 @@ a {
   font-size: 0.72rem;
 }
 .demo-payment-note span {
-  color: #777b76;
+  /* Darken small text just enough for AA contrast on white. */
+  color: #70746f;
 }
 .checkout-buttons {
   margin-top: 1.3rem;
@@ -1130,7 +1155,8 @@ a {
   font: 700 0.74rem var(--display);
 }
 .summary-item span {
-  color: #7a7e79;
+  /* Keep small labels readable on white and bone surfaces. */
+  color: #686c65;
   font-size: 0.63rem;
 }
 .summary-item > strong {
@@ -1157,7 +1183,8 @@ a {
 .checkout-summary > small {
   display: block;
   margin-top: 1rem;
-  color: #898d88;
+  /* Keep checkout and bag detail text readable against its background. */
+  color: #686c65;
   font-size: 0.61rem;
 }
 .checkout-success {
@@ -1189,7 +1216,8 @@ a {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #878b86;
+  /* Keep checkout and bag detail text readable against its background. */
+  color: #686c65;
   font-size: 0.61rem;
   text-transform: uppercase;
 }
@@ -1436,3 +1464,11 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Help dialogs reuse the existing overlay and palette for readable demo policies. */
+.help-card { position: relative; width: min(580px, 100%); max-height: 90vh; overflow-y: auto; padding: 2rem; background: white; }
+.help-card > .modal-close { float: right; }
+.help-card table { width: 100%; border-collapse: collapse; }
+.help-card th, .help-card td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--line); }
+/* Disabled stock controls still look like controls, while signaling their limit. */
+button:disabled { cursor: not-allowed; opacity: 0.6; }

@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#18231d">
   <meta name="description" content="North & Loom creates refined everyday clothing and accessories built for movement, travel, and repeat wear.">
+  <!-- Share metadata and a local icon identify the storefront in tabs and previews. -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="canonical" href="https://shop.jet380.com/">
+  <meta property="og:title" content="North &amp; Loom — Built for Everyday">
+  <meta property="og:description" content="North &amp; Loom creates refined everyday clothing and accessories built for movement, travel, and repeat wear.">
+  <meta property="og:image" content="https://shop.jet380.com/assets/hero.webp">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shop.jet380.com/">
   <title>North & Loom — Built for Everyday</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,12 +22,16 @@
 <body>
   <!-- Skip link jumps to the main content (the hero comes first), so the label now says that. -->
   <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Group both notice bars in a landmark without changing their layout. -->
+  <aside aria-label="Store notices">
   <div class="demo-bar">Portfolio demonstration · Fictional products · No real orders or payments</div>
   <div class="shipping-bar"><span>Complimentary shipping over $150</span><span>Easy 30-day returns</span><span>Secure demo checkout</span></div>
+  </aside>
   <header class="site-header">
     <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     <a class="logo" href="#top" aria-label="North and Loom home">NORTH<span>&amp;</span>LOOM</a>
-    <nav aria-label="Main navigation"><a href="#shop">New Arrivals</a><a href="#shop" data-nav-filter="Apparel">Apparel</a><a href="#shop" data-nav-filter="Accessories">Accessories</a><a href="#story">Our Standard</a></nav>
+    <!-- Navigation filters also synchronize the active grid button. -->
+    <nav aria-label="Main navigation"><a href="#shop" data-nav-filter="All">New Arrivals</a><a href="#shop" data-nav-filter="Apparel">Apparel</a><a href="#shop" data-nav-filter="Accessories">Accessories</a><a href="#story">Our Standard</a></nav>
     <div class="header-actions">
       <button class="icon-button search-toggle" type="button" aria-label="Search">⌕</button>
       <button class="cart-button" type="button" aria-label="Open cart">Bag <span id="cart-count">0</span></button>
@@ -30,7 +42,8 @@
 
   <main id="main">
     <section class="hero" id="top">
-      <img src="assets/hero.png" alt="Model wearing a forest green overshirt in a modern architectural setting">
+      <!-- Compressed hero keeps the same artwork; dimensions reserve its space. -->
+      <img width="1586" height="992" src="assets/hero.webp" alt="Model wearing a forest green overshirt in a modern architectural setting">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="eyebrow">Fall / Winter 2026</p>
@@ -71,14 +84,16 @@
 
   <footer class="site-footer">
     <a class="logo footer-logo" href="#top">NORTH<span>&amp;</span>LOOM</a>
-    <div><strong>Shop</strong><a href="#shop">New Arrivals</a><a href="#shop">Apparel</a><a href="#shop">Accessories</a></div>
-    <div><strong>Help</strong><a href="#">Shipping &amp; Returns</a><a href="#">Size Guide</a><a href="#">Contact</a></div>
+    <!-- Footer shop links use the same filters as the header. -->
+    <div><strong>Shop</strong><a href="#shop" data-nav-filter="All">New Arrivals</a><a href="#shop" data-nav-filter="Apparel">Apparel</a><a href="#shop" data-nav-filter="Accessories">Accessories</a></div>
+    <div><strong>Help</strong><a href="#help-shipping" data-help="shipping">Shipping &amp; Returns</a><a href="#help-sizes" data-help="sizes">Size Guide</a><a href="#help-contact" data-help="contact">Contact</a></div>
     <div><strong>Demo</strong><span>This is a fictional portfolio website. Products, policies, contact details, and transactions are for demonstration only.</span></div>
     <small>© 2026 North &amp; Loom · Demonstration storefront</small>
   </footer>
 
-  <aside class="drawer cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
-    <div class="drawer-header"><div><p>Your bag</p><h2 id="cart-title"><span id="cart-title-count">0</span> items</h2></div><button class="drawer-close" type="button" aria-label="Close cart">×</button></div>
+  <!-- Inert keeps the closed drawer out of keyboard navigation. -->
+  <aside inert role="dialog" aria-modal="true" class="drawer cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="drawer-header"><div><p>Your bag</p><!-- The count and noun update together for singular and plural quantities. --><h2 id="cart-title"><span id="cart-title-count">0</span> <span id="cart-title-word">items</span></h2></div><button class="drawer-close" type="button" aria-label="Close cart">×</button></div>
     <div class="cart-empty" id="cart-empty"><span>0</span><h3>Your bag is empty.</h3><p>Add something built to stay in rotation.</p><button type="button" class="button dark drawer-close">Shop the collection</button></div>
     <div class="cart-filled" id="cart-filled" hidden><div class="cart-items" id="cart-items"></div><div class="promo"><label><input id="promo-input" type="text" placeholder="Promo code"><button id="promo-button" type="button">Apply</button></label><small id="promo-message">Try WELCOME15 for this demonstration.</small></div><div class="cart-totals"><div><span>Subtotal</span><strong id="cart-subtotal">$0</strong></div><div id="discount-line" hidden><span>Discount</span><strong id="cart-discount">−$0</strong></div><div><span>Estimated shipping</span><strong id="cart-shipping">Calculated at checkout</strong></div><div class="cart-total"><span>Estimated total</span><strong id="cart-total">$0</strong></div></div><button class="button checkout-open" type="button">Continue to checkout <span>→</span></button><p class="secure-line">Secure demonstration checkout · No charge will be made</p></div>
   </aside>
@@ -93,19 +108,28 @@
     </section>
   </div>
 
-  <div class="checkout" id="checkout-modal" hidden>
+  <!-- Checkout participates in the same modal focus handling as the bag and product panel. -->
+  <div class="checkout" id="checkout-modal" role="dialog" aria-modal="true" aria-label="Demonstration checkout" hidden>
     <div class="checkout-header"><a class="logo">NORTH<span>&amp;</span>LOOM</a><button type="button" class="checkout-close">Return to bag ×</button></div>
     <div class="checkout-layout">
       <section class="checkout-main">
         <div class="checkout-steps"><span class="active">1 Delivery</span><i></i><span>2 Payment</span><i></i><span>3 Confirmation</span></div>
         <form id="checkout-form">
-          <section class="checkout-step active" data-checkout-step="1"><p class="checkout-kicker">Step 1 of 3</p><h1>Where should we send it?</h1><div class="delivery-toggle"><label><input type="radio" name="delivery" value="ship" checked><span><strong>Ship my order</strong><small>Free over $150 · otherwise $8</small></span></label><label><input type="radio" name="delivery" value="pickup"><span><strong>Local pickup</strong><small>Ready in 2–4 business days</small></span></label></div><div class="checkout-fields"><label class="full"><span>Email</span><input type="email" name="email" required autocomplete="email" placeholder="jordan@example.com"></label><label><span>First name</span><input type="text" name="first" required autocomplete="given-name"></label><label><span>Last name</span><input type="text" name="last" required autocomplete="family-name"></label><label class="full ship-field"><span>Street address</span><input type="text" name="address" required autocomplete="street-address"></label><label class="ship-field"><span>City</span><input type="text" name="city" required autocomplete="address-level2"></label><label class="ship-field"><span>State</span><select name="state" required autocomplete="address-level1"><option value="">Select</option><option>FL</option><option>GA</option><option>NY</option><option>TX</option><option>CA</option></select></label><label class="ship-field"><span>ZIP code</span><input type="text" name="zip" required inputmode="numeric" autocomplete="postal-code"></label><label><span>Mobile number</span><input type="tel" name="phone" required autocomplete="tel"></label></div><button class="button next-checkout" type="button">Continue to payment <span>→</span></button></section>
+          <section class="checkout-step active" data-checkout-step="1"><p class="checkout-kicker">Step 1 of 3</p><h1>Where should we send it?</h1><div class="delivery-toggle"><label><input type="radio" name="delivery" value="ship" checked><span><strong>Ship my order</strong><small>Free over $150 · otherwise $8</small></span></label><label><input type="radio" name="delivery" value="pickup"><span><strong>Local pickup</strong><small>Ready in 2–4 business days</small></span></label></div><div class="checkout-fields"><label class="full"><span>Email</span><input type="email" name="email" required autocomplete="email" placeholder="jordan@example.com"></label><label><span>First name</span><input type="text" name="first" required autocomplete="given-name"></label><label><span>Last name</span><input type="text" name="last" required autocomplete="family-name"></label><label class="full ship-field"><span>Street address</span><input type="text" name="address" required autocomplete="street-address"></label><label class="ship-field"><span>City</span><input type="text" name="city" required autocomplete="address-level2"></label><label class="ship-field"><span>State</span><select name="state" required autocomplete="address-level1"><option value="">Select</option><!-- All states and DC are available for demo shipping addresses. --><option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>DC</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option></select></label><label class="ship-field"><span>ZIP code</span><input type="text" name="zip" required inputmode="numeric" autocomplete="postal-code"></label><label><span>Mobile number</span><input type="tel" name="phone" required autocomplete="tel"></label></div><button class="button next-checkout" type="button">Continue to payment <span>→</span></button></section>
           <section class="checkout-step" data-checkout-step="2"><p class="checkout-kicker">Step 2 of 3</p><h1>Payment details</h1><div class="demo-payment-note"><strong>Demonstration checkout</strong><span>Enter any test information. Nothing is transmitted, stored, or charged.</span></div><div class="checkout-fields"><label class="full"><span>Cardholder name</span><input type="text" name="cardname" required autocomplete="cc-name" placeholder="Jordan Smith"></label><label class="full"><span>Card number</span><input type="text" name="card" required inputmode="numeric" maxlength="19" autocomplete="cc-number" placeholder="4242 4242 4242 4242"></label><label><span>Expiration</span><input type="text" name="expiry" required inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY"></label><label><span>Security code</span><input type="text" name="cvc" required inputmode="numeric" maxlength="4" autocomplete="cc-csc" placeholder="123"></label></div><div class="checkout-buttons"><button class="back-checkout" type="button">← Back</button><button class="button" type="submit">Place demonstration order <span>→</span></button></div></section>
         </form>
-        <section class="checkout-success" id="checkout-success" hidden><div class="success-check">✓</div><p class="checkout-kicker">Order confirmed</p><h1>Thank you, <span id="customer-name">Jordan</span>.</h1><p>A receipt and tracking link would now be sent to <strong id="customer-email"></strong>.</p><div class="order-number"><span>Order number</span><strong>NL-260906</strong></div><div class="tracking-demo"><span>Order placed</span><i></i><span>Preparing</span><i></i><span>Shipped</span><i></i><span>Delivered</span></div><button class="button checkout-finish" type="button">Return to store</button></section>
+        <section class="checkout-success" id="checkout-success" hidden><div class="success-check">✓</div><p class="checkout-kicker">Order confirmed</p><h1>Thank you, <span id="customer-name">Jordan</span>.</h1><p>A receipt and tracking link would now be sent to <strong id="customer-email"></strong>.</p><div class="order-number"><span>Order number</span><!-- Each submitted demo order receives a fresh reference. --><strong id="order-number"></strong></div><div class="tracking-demo"><span>Order placed</span><i></i><span>Preparing</span><i></i><span>Shipped</span><i></i><span>Delivered</span></div><button class="button checkout-finish" type="button">Return to store</button></section>
       </section>
       <aside class="checkout-summary"><h2>Order summary</h2><div id="checkout-items"></div><div class="summary-lines"><div><span>Subtotal</span><strong id="checkout-subtotal"></strong></div><div id="checkout-discount-row" hidden><span>Discount</span><strong id="checkout-discount"></strong></div><div><span>Shipping</span><strong id="checkout-shipping"></strong></div><div class="summary-total"><span>Total</span><strong id="checkout-total"></strong></div></div><!-- There is no tax line in the summary, so say plainly that tax is not included. --><small>Taxes are not included in this demonstration total.</small></aside>
     </div>
+  </div>
+  <!-- Help stays in the page and never sends contact information. -->
+  <div class="modal" id="help-modal" hidden>
+    <div class="modal-backdrop" data-help-close></div>
+    <section class="help-card" role="dialog" aria-modal="true" aria-labelledby="help-title">
+      <button class="modal-close" type="button" data-help-close aria-label="Close help">×</button>
+      <h2 id="help-title"></h2><div id="help-content"></div>
+    </section>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
