@@ -1,0 +1,2 @@
+# Keep local Finder metadata out of deployed files.
+.DS_Store
