@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to products</a>
+  <!-- Skip link jumps to the main content (the hero comes first), so the label now says that. -->
+  <a class="skip-link" href="#main">Skip to main content</a>
   <div class="demo-bar">Portfolio demonstration · Fictional products · No real orders or payments</div>
   <div class="shipping-bar"><span>Complimentary shipping over $150</span><span>Easy 30-day returns</span><span>Secure demo checkout</span></div>
   <header class="site-header">
@@ -24,7 +25,8 @@
       <button class="cart-button" type="button" aria-label="Open cart">Bag <span id="cart-count">0</span></button>
     </div>
   </header>
-  <div class="search-panel" hidden><label><span>Search the collection</span><input id="header-search" type="search" placeholder="Try “overshirt” or “bag”"></label><button type="button" class="search-close" aria-label="Close search">×</button></div>
+  <!-- Example searches only use words found in product names (searching "bag" returned nothing). -->
+  <div class="search-panel" hidden><label><span>Search the collection</span><input id="header-search" type="search" placeholder="Try “overshirt” or “beanie”"></label><button type="button" class="search-close" aria-label="Close search">×</button></div>
 
   <main id="main">
     <section class="hero" id="top">
@@ -63,7 +65,7 @@
 
     <section class="newsletter">
       <p class="eyebrow dark">From the studio</p><h2>New releases. No clutter.</h2><p>Occasional product notes, restocks, and early access.</p>
-      <form id="newsletter-form"><label><span class="sr-only">Email address</span><input type="email" required placeholder="Email address"><button type="submit">Join the list →</button></label><small id="newsletter-note">By joining, you agree to receive demonstration marketing emails.</small></form>
+      <form id="newsletter-form"><label><span class="sr-only">Email address</span><input type="email" required placeholder="Email address"><button type="submit">Join the list →</button></label><!-- Demo note: nothing is collected, so the wording no longer promises marketing emails. --><small id="newsletter-note">Demo only. Your email address is not stored or sent anywhere.</small></form>
     </section>
   </main>
 
@@ -102,7 +104,7 @@
         </form>
         <section class="checkout-success" id="checkout-success" hidden><div class="success-check">✓</div><p class="checkout-kicker">Order confirmed</p><h1>Thank you, <span id="customer-name">Jordan</span>.</h1><p>A receipt and tracking link would now be sent to <strong id="customer-email"></strong>.</p><div class="order-number"><span>Order number</span><strong>NL-260906</strong></div><div class="tracking-demo"><span>Order placed</span><i></i><span>Preparing</span><i></i><span>Shipped</span><i></i><span>Delivered</span></div><button class="button checkout-finish" type="button">Return to store</button></section>
       </section>
-      <aside class="checkout-summary"><h2>Order summary</h2><div id="checkout-items"></div><div class="summary-lines"><div><span>Subtotal</span><strong id="checkout-subtotal"></strong></div><div id="checkout-discount-row" hidden><span>Discount</span><strong id="checkout-discount"></strong></div><div><span>Shipping</span><strong id="checkout-shipping"></strong></div><div class="summary-total"><span>Total</span><strong id="checkout-total"></strong></div></div><small>Taxes calculated for demonstration purposes only.</small></aside>
+      <aside class="checkout-summary"><h2>Order summary</h2><div id="checkout-items"></div><div class="summary-lines"><div><span>Subtotal</span><strong id="checkout-subtotal"></strong></div><div id="checkout-discount-row" hidden><span>Discount</span><strong id="checkout-discount"></strong></div><div><span>Shipping</span><strong id="checkout-shipping"></strong></div><div class="summary-total"><span>Total</span><strong id="checkout-total"></strong></div></div><!-- There is no tax line in the summary, so say plainly that tax is not included. --><small>Taxes are not included in this demonstration total.</small></aside>
     </div>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
